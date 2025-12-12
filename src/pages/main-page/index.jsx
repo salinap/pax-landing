@@ -204,6 +204,7 @@ export const MainPage = () => {
         </div>
       </AnimatePresence>
       <div className="container">
+        <div className="pt-[96px]"></div>
         <h3>Почему PAX?</h3>
         <div className="mx-[-26px] mt-[56px] flex flex-wrap lg:mx-0">
           <div className="bg-primary rounded-[48px] px-[24px] py-[16px] sm:w-1/2 lg:px-[32px]">
