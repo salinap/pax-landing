@@ -63,7 +63,7 @@ h4 {
 }
 
 .container {
-  max-width: 1230px;
+  max-width: 1275px;
   padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
@@ -125,7 +125,7 @@ h4 {
 }
 
 .header__button {
-  padding: 10px 24px;
+  padding: 7px 24px;
   font-size: 16px;
 }
 
@@ -162,6 +162,7 @@ h1 {
   line-height: 80px;
   color: rgba(21, 21, 25, 1);
   font-family: 'TikTok Sans', sans-serif;
+  letter-spacing: 3px;
 
   @media (max-width: 1024px) {
     font-size: 48px;
@@ -172,13 +173,13 @@ h1 {
 h2 {
   color: rgba(105, 103, 119, 1);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 21px;
   line-height: 32px;
-
+  
   @media (max-width: 1024px) {
     font-size: 16px;
     line-height: 28px;
-
+    
     br {
       display: none;
     }
@@ -186,6 +187,7 @@ h2 {
 }
 
 h3 {
+  letter-spacing: 2px;
   font-weight: 600;
   font-size: 48px;
   line-height: 56px;

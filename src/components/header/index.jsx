@@ -84,7 +84,7 @@ const Header = () => {
             <NavLink to={NAV[0].to}>
               <img src={PaxLogo} className="max-h-[34px] lg:max-h-max" alt="" />
             </NavLink>
-            <nav className="mx-auto hidden lg:block">
+            <nav className="mx-auto hidden gap-[14px] lg:flex">
               {NAV.map(({ title, to }) => (
                 <NavLink
                   to={to}

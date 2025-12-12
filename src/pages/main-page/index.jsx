@@ -10,15 +10,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import HiWImage1 from '../../assets/images/hiw1.jpg';
 import HiWImage2 from '../../assets/images/hiw2.jpg';
 import HiWImage3 from '../../assets/images/hiw3.jpg';
-import MainImage from '../../assets/images/main-image.png';
+import MainImage from '../../assets/images/main-image.svg';
 import ResultImage1 from '../../assets/images/result1.jpg';
 import ResultImage2 from '../../assets/images/result2.jpg';
 import SubtractLogo from '../../assets/images/subtract.svg';
-import TryImage from '../../assets/images/try.png';
-import WhyImage1 from '../../assets/images/why1.png';
-import WhyImage2 from '../../assets/images/why2.png';
-import WhyImage3 from '../../assets/images/why3.png';
-import WhyImage4 from '../../assets/images/why4.png';
+import TryImage from '../../assets/images/try.svg';
+import WhyImage1 from '../../assets/images/why1.svg';
+import WhyImage2 from '../../assets/images/why2.svg';
+import WhyImage3 from '../../assets/images/why3.svg';
+import WhyImage4 from '../../assets/images/why4.svg';
 import FaqAccordion from '../../components/faq-accordion';
 import VideoCard from '../../components/video-card';
 
@@ -43,6 +43,33 @@ const HOW_IT_WORKS = [
   },
 ];
 
+const REVIREWS = [
+  {
+    title: 'Александра',
+    date: '26 сентября 2025',
+    text: 'Я использовал это лекарство в течение двух недель, и результаты превзошли все ожидания. Оно быстро помогло облегчить симптомы, а побочные эффекты были минимальными. Рекомендую всем, кто ищет эффективное и безопасное решение!',
+    img: HiWImage1,
+  },
+  {
+    title: 'Прохор',
+    date: '26 сентября 2025',
+    text: ' Я начал принимать это лекарство по рекомендации врача, и могу сказать, что оно оказалось настоящей находкой. Сначала я немного опасался возможных побочных эффектов, которые обычно сопровождают многие препараты, но, к счастью, в этом случае их практически не было. Уже после первого применения я заметил значительное облегчение симптомов, и с каждым днем становилось все лучше.',
+    img: HiWImage2,
+  },
+  {
+    title: 'Евгения',
+    date: '26 сентября 2025',
+    text: 'Я использовал это лекарство в течение двух недель, и результаты превзошли все ожидания. Оно быстро помогло облегчить симптомы, а побочные эффекты были минимальными. Рекомендую всем, кто ищет эффективное и безопасное решение!',
+    img: HiWImage3,
+  },
+  {
+    title: 'Светлана',
+    date: '26 сентября 2025',
+    text: 'Мое состояние улучшилось, вернулась энергия, и я смог заниматься привычными делами без дискомфорта. Кроме того, очень понравилась доступная инструкция, которая помогла мне разобраться, как правильно использовать препарат. В целом, я очень доволен результатом и с уверенностью могу рекомендовать это лекарство всем, кто сталкивается с похожими проблемами!',
+    img: HiWImage1,
+  },
+];
+
 export const MainPage = () => {
   const [howItWorksStep, setHowItWorksStep] = useState(0);
 
@@ -51,7 +78,7 @@ export const MainPage = () => {
       <div className="bg-main">
         <div className="container">
           <div
-            className="bg-right-center bg-[length:336px] bg-[center_bottom_-65px] bg-no-repeat pb-[400px] pt-[38px] lg:bg-[length:auto] lg:bg-[right_center] lg:pb-[128px] lg:pt-[96px]"
+            className="bg-right-center bg-[length:336px] bg-[center_bottom_-65px] bg-no-repeat pb-[400px] pt-[38px] lg:bg-[length:auto] lg:bg-[right_50px_center] lg:pb-[128px] lg:pt-[96px]"
             style={{
               backgroundImage: `url(${MainImage})`,
             }}
@@ -68,12 +95,12 @@ export const MainPage = () => {
               </h2>
               <div className="mt-[38px] flex flex-col gap-[24px] lg:mt-[48px] xl:flex-row">
                 <button className="button-primary">Начать сбор набора</button>
-                <div className="hidden w-fit items-center gap-3 rounded-3xl bg-white p-4 shadow-sm lg:flex">
+                <div className="hidden w-fit items-center gap-3 rounded-[24px] bg-white p-[10px] pr-[24px] lg:flex">
                   <div className="flex">
                     <img src={SubtractLogo} alt="Logo" />
                   </div>
                   <div className="flex flex-col leading-tight">
-                    <span className="text-[18px] font-semibold text-black">
+                    <span className="text-[20px] font-semibold text-black">
                       15 000 бонусов
                     </span>
                     <span className="text-sm text-gray-500">
@@ -269,141 +296,65 @@ export const MainPage = () => {
           </h3>
           <h4>Отзывы</h4>
           <div className="mt-[56px] flex flex-wrap">
-            <div className="bg-primary w-1/3 rounded-[48px] p-[48px]">
-              <div className="flex">
-                <div
-                  className="size-[64px] rounded-full"
-                  style={{
-                    backgroundImage: `url(${HiWImage1})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                  }}
-                />
-                <div className="mb-[24px] ml-[24px]">
-                  <div className="mb-[4px] text-[24px] font-semibold leading-[32px]">
-                    Александра
+            {REVIREWS.map((review, index) => {
+              return (
+                <>
+                  {index === 2 && (
+                    <>
+                      <div
+                        className="bg-primary w-1/3 rounded-[48px] p-[48px]"
+                        style={{
+                          backgroundImage: `url(${ResultImage1})`,
+                          backgroundRepeat: 'no-repeat',
+                          backgroundSize: 'cover',
+                        }}
+                      ></div>
+                      <div
+                        className="bg-primary w-1/3 rounded-[48px] p-[48px]"
+                        style={{
+                          backgroundImage: `url(${ResultImage2})`,
+                          backgroundRepeat: 'no-repeat',
+                          backgroundSize: 'cover',
+                        }}
+                      ></div>
+                    </>
+                  )}
+                  <div className="bg-primary w-1/3 rounded-[48px] p-[48px]">
+                    <div className="flex">
+                      <div
+                        className="size-[64px] rounded-full"
+                        style={{
+                          backgroundImage: `url(${review.img})`,
+                          backgroundRepeat: 'no-repeat',
+                          backgroundSize: 'cover',
+                        }}
+                      />
+                      <div className="mb-[24px] ml-[24px]">
+                        <div className="mb-[4px] text-[24px] font-semibold leading-[32px]">
+                          {review.title}
+                        </div>
+                        <div className="text-[16px] text-[#696777]">
+                          {review.date}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-[16px] leading-[24px] text-[#696777]">
+                      {review.text}
+                    </div>
                   </div>
-                  <div className="text-[16px] text-[#696777]">
-                    26 сентября 2025
-                  </div>
-                </div>
-              </div>
-              <div className="text-[16px] leading-[24px] text-[#696777]">
-                Я использовал это лекарство в течение двух недель, и результаты
-                превзошли все ожидания. Оно быстро помогло облегчить симптомы, а
-                побочные эффекты были минимальными. Рекомендую всем, кто ищет
-                эффективное и безопасное решение!
-              </div>
-            </div>
-            <div className="bg-primary w-1/3 rounded-[48px] p-[48px]">
-              <div className="flex">
-                <div
-                  className="size-[64px] rounded-full"
-                  style={{
-                    backgroundImage: `url(${HiWImage2})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                  }}
-                />
-                <div className="mb-[24px] ml-[24px]">
-                  <div className="mb-[4px] text-[24px] font-semibold leading-[32px]">
-                    Прохор
-                  </div>
-                  <div className="text-[16px] text-[#696777]">
-                    26 сентября 2025
-                  </div>
-                </div>
-              </div>
-              <div className="text-[16px] leading-[24px] text-[#696777]">
-                Я начал принимать это лекарство по рекомендации врача, и могу
-                сказать, что оно оказалось настоящей находкой. Сначала я немного
-                опасался возможных побочных эффектов, которые обычно
-                сопровождают многие препараты, но, к счастью, в этом случае их
-                практически не было. Уже после первого применения я заметил
-                значительное облегчение симптомов, и с каждым днем становилось
-                все лучше.
-              </div>
-            </div>
-            <div
-              className="bg-primary w-1/3 rounded-[48px] p-[48px]"
-              style={{
-                backgroundImage: `url(${ResultImage1})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-              }}
-            ></div>
-            <div
-              className="bg-primary w-1/3 rounded-[48px] p-[48px]"
-              style={{
-                backgroundImage: `url(${ResultImage2})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-              }}
-            ></div>
-            <div className="bg-primary w-1/3 rounded-[48px] p-[48px]">
-              <div className="flex">
-                <div
-                  className="size-[64px] rounded-full"
-                  style={{
-                    backgroundImage: `url(${HiWImage3})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                  }}
-                />
-                <div className="mb-[24px] ml-[24px]">
-                  <div className="mb-[4px] text-[24px] font-semibold leading-[32px]">
-                    Евгения
-                  </div>
-                  <div className="text-[16px] text-[#696777]">
-                    26 сентября 2025
-                  </div>
-                </div>
-              </div>
-              <div className="text-[16px] leading-[24px] text-[#696777]">
-                Я использовал это лекарство в течение двух недель, и результаты
-                превзошли все ожидания. Оно быстро помогло облегчить симптомы, а
-                побочные эффекты были минимальными. Рекомендую всем, кто ищет
-                эффективное и безопасное решение!
-              </div>
-            </div>
-            <div className="bg-primary w-1/3 rounded-[48px] p-[48px]">
-              <div className="flex">
-                <div
-                  className="size-[64px] rounded-full"
-                  style={{
-                    backgroundImage: `url(${HiWImage1})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                  }}
-                />
-                <div className="mb-[24px] ml-[24px]">
-                  <div className="mb-[4px] text-[24px] font-semibold leading-[32px]">
-                    Светлана
-                  </div>
-                  <div className="text-[16px] text-[#696777]">
-                    26 сентября 2025
-                  </div>
-                </div>
-              </div>
-              <div className="text-[16px] leading-[24px] text-[#696777]">
-                Мое состояние улучшилось, вернулась энергия, и я смог заниматься
-                привычными делами без дискомфорта. Кроме того, очень понравилась
-                доступная инструкция, которая помогла мне разобраться, как
-                правильно использовать препарат. В целом, я очень доволен
-                результатом и с уверенностью могу рекомендовать это лекарство
-                всем, кто сталкивается с похожими проблемами!
-              </div>
-            </div>
+                </>
+              );
+            })}
           </div>
         </div>
       </div>
       <div className="container">
-        <div className="flex items-end">
+        <div className="flex items-end pb-[96px]">
           <div className="h-[356px]  flex-1 rounded-[48px] bg-[#0788F1] p-[60px]">
             <div className="mb-[12px] text-[40px] font-semibold leading-[48px] text-white">
               Попробуйте, вам понравится!
             </div>
-            <div className="mb-[32px] font-tiktok text-[20px] font-medium leading-[28px] text-white">
+            <div className="mb-[32px] pr-0 font-tiktok text-[20px] font-medium leading-[28px] text-white opacity-80 lg:pr-[30px]">
               Мы поможем собрать вам персональный заказ. ИИ, менеджеры и
               огромная база препаратов - все что нужно для эффективного лечения.
             </div>
