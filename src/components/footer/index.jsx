@@ -1,19 +1,23 @@
+/* eslint-disable prettier/prettier */
 import { NavLink } from 'react-router-dom';
 
 import PaxLogo from '../../assets/images/pax-white.svg';
+import { RoutesPath } from 'shared/routes-path';
 
 export default function Footer() {
   return (
-    <footer className="mx-auto mb-[96px] mt-16 max-w-7xl rounded-[48px] bg-[#151518] p-[50px] text-white">
+    <footer className="mx-auto mb-0 mt-16 max-w-7xl rounded-t-brand-32 bg-[#151518] p-[32px] text-white lg:mb-[96px] lg:rounded-[48px] lg:p-[50px]">
       <div className="flex flex-col justify-between gap-10 md:flex-row">
         <div className="flex flex-col justify-between">
-          <img src={PaxLogo} alt="" />
-          <p className="mt-4 text-[16px] text-gray-500 md:mt-0">© PAX 2025</p>
+          <img src={PaxLogo} alt="" className="max-w-[86px]" />
+          <p className="mt-4 hidden text-[16px] text-gray-500 md:mt-0 lg:block">
+            © PAX{' '}{new Date().getFullYear()}
+          </p>
         </div>
 
-        <div className="flex flex-col gap-[180px] text-base sm:flex-row">
+        <div className="flex flex-col gap-[40px] text-base lg:flex-row lg:gap-[180px]">
           <nav className="flex flex-col gap-[12px]">
-            <NavLink to="/" className="text-white">
+            <NavLink to={RoutesPath.MAIN} className="text-white">
               Smart-аптека
             </NavLink>
             <NavLink to="/" className="text-white">
@@ -22,7 +26,7 @@ export default function Footer() {
             <NavLink to="/" className="text-white">
               Компаниям
             </NavLink>
-            <NavLink to="/" className="text-white">
+            <NavLink to={RoutesPath.ABOUT} className="text-white">
               О нас
             </NavLink>
             <NavLink to="/" className="text-white">
@@ -144,6 +148,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <p className="mt-[40px] text-[16px] text-gray-500 md:mt-0 lg:hidden">
+        © PAX{' '}{new Date().getFullYear()}
+      </p>
     </footer>
   );
 }

@@ -64,7 +64,7 @@ h4 {
 
 .container {
   max-width: 1275px;
-  padding: 0 15px;
+  padding: 0 24px;
   margin-left: auto;
   margin-right: auto;
 
@@ -162,7 +162,6 @@ h1 {
   line-height: 80px;
   color: rgba(21, 21, 25, 1);
   font-family: 'TikTok Sans', sans-serif;
-  letter-spacing: 3px;
 
   @media (max-width: 1024px) {
     font-size: 48px;
@@ -175,11 +174,11 @@ h2 {
   font-weight: 400;
   font-size: 21px;
   line-height: 32px;
-  
+
   @media (max-width: 1024px) {
     font-size: 16px;
     line-height: 28px;
-    
+
     br {
       display: none;
     }
@@ -187,7 +186,6 @@ h2 {
 }
 
 h3 {
-  letter-spacing: 2px;
   font-weight: 600;
   font-size: 48px;
   line-height: 56px;
@@ -216,10 +214,38 @@ h4 {
 }
 
 .swiper-pagination {
-  position: relative!important;
+  position: relative !important;
   margin-top: 30px;
 }
 
 .swiper {
-  overflow: visible!important;
+  overflow: visible !important;
+}
+
+.results-slider .swiper-slide {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.results-slider .swiper-wrapper {
+  align-items: stretch;
+}
+
+.team-section {
+  .swiper-pagination {
+    display: none;
+
+    @media (max-width: 1024px) {
+      display: block;
+    }
+  }
+
+  .swiper-wrapper {
+    margin-left: -64px;
+
+    @media (max-width: 1280px) {
+      margin-left: 0;
+    }
+  }
 }

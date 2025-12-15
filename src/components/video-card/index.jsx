@@ -1,8 +1,6 @@
 import { useRef, useState } from 'react';
 
-import VideoPreview from '../../assets/images/video-preview.jpg';
-
-export default function VideoCard() {
+export default function VideoCard({preview, url}) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -36,8 +34,8 @@ export default function VideoCard() {
     >
       <video
         ref={videoRef}
-        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-        poster={VideoPreview}
+        src={url}
+        poster={preview}
         className="h-auto w-full"
       />
 

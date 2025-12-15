@@ -2,14 +2,16 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+
+import { RoutesPath } from 'shared/routes-path';
 
 import PaxLogo from '../../assets/images/pax.svg';
 
 const NAV = [
   {
     title: 'Smart-аптека',
-    to: '/main',
+    to: RoutesPath.MAIN,
   },
   {
     title: 'Врачам / Компаниям',
@@ -17,7 +19,7 @@ const NAV = [
   },
   {
     title: 'О нас',
-    to: '/',
+    to: RoutesPath.ABOUT,
   },
   {
     title: 'Отзывы',
@@ -35,6 +37,11 @@ const NAV = [
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
 
   useEffect(() => {
     if (open) {

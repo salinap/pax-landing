@@ -36,7 +36,7 @@ export default function FaqAccordion() {
   };
 
   return (
-    <div className="mx-auto flex w-full flex-col gap-[16px]">
+    <div className="mx-[-24px] flex flex-col gap-[16px] lg:mx-auto">
       {faqs.map((item, index) => (
         <div
           key={index}
@@ -44,7 +44,7 @@ export default function FaqAccordion() {
           onClick={() => toggle(index)}
         >
           <div
-            className={` flex-1 rounded-[36px] p-[36px] ${
+            className={` flex-1 rounded-[36px] px-[24px] py-[36px] lg:px-[36px] ${
               openIndex === index ? 'bg-main' : 'bg-primary'
             }`}
           >

@@ -14,7 +14,9 @@ import MainImage from '../../assets/images/main-image.svg';
 import ResultImage1 from '../../assets/images/result1.jpg';
 import ResultImage2 from '../../assets/images/result2.jpg';
 import SubtractLogo from '../../assets/images/subtract.svg';
+import TryMobileImage from '../../assets/images/try-mobile.svg';
 import TryImage from '../../assets/images/try.svg';
+import VideoPreview from '../../assets/images/video-preview.jpg';
 import WhyImage1 from '../../assets/images/why1.svg';
 import WhyImage2 from '../../assets/images/why2.svg';
 import WhyImage3 from '../../assets/images/why3.svg';
@@ -204,7 +206,7 @@ export const MainPage = () => {
         </div>
       </AnimatePresence>
       <div className="container">
-        <div className="pt-[96px]"></div>
+        <div className="pt-[46px] xl:pt-[96px]"></div>
         <h3>Почему PAX?</h3>
         <div className="mx-[-26px] mt-[56px] flex flex-wrap lg:mx-0">
           <div className="bg-primary rounded-[48px] px-[24px] py-[16px] sm:w-1/2 lg:px-[32px]">
@@ -266,7 +268,10 @@ export const MainPage = () => {
       </div>
       <div className="section">
         <div className="container">
-          <VideoCard />
+          <VideoCard
+            preview={VideoPreview}
+            url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          />
         </div>
       </div>
       <div className="my-[32px]">
@@ -296,7 +301,44 @@ export const MainPage = () => {
             хочется делиться
           </h3>
           <h4>Отзывы</h4>
-          <div className="mt-[56px] flex flex-wrap">
+          <div className="results-slider mt-[48px] lg:hidden">
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={16}
+              slidesPerView="auto"
+              pagination={{ clickable: true }}
+            >
+              {REVIREWS.map((review, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="bg-primary w-full rounded-brand-32 p-[32px]"
+                >
+                  <div className="flex">
+                    <div
+                      className="size-[64px] rounded-full"
+                      style={{
+                        backgroundImage: `url(${review.img})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'cover',
+                      }}
+                    />
+                    <div className="mb-[24px] ml-[24px]">
+                      <div className="mb-[4px] text-[24px] font-semibold leading-[32px]">
+                        {review.title}
+                      </div>
+                      <div className="text-[16px] text-[#696777]">
+                        {review.date}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-[16px] leading-[24px] text-[#696777]">
+                    {review.text}
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          <div className="mt-[56px] hidden flex-wrap lg:flex">
             {REVIREWS.map((review, index) => {
               return (
                 <>
@@ -350,20 +392,28 @@ export const MainPage = () => {
         </div>
       </div>
       <div className="container">
-        <div className="flex items-end pb-[96px]">
-          <div className="h-[356px]  flex-1 rounded-[48px] bg-[#0788F1] p-[60px]">
-            <div className="mb-[12px] text-[40px] font-semibold leading-[48px] text-white">
+        <div className="mx-[-24px] flex flex-wrap items-end pb-[96px] lg:mx-0">
+          <div className="flex-1 rounded-[48px] bg-[#0788F1] p-[32px] lg:h-[356px] lg:p-[60px]">
+            <div className="mb-[12px] text-[28px] font-semibold leading-[36px] text-white lg:text-[40px] lg:leading-[48px]">
               Попробуйте, вам понравится!
             </div>
             <div className="mb-[32px] pr-0 font-tiktok text-[20px] font-medium leading-[28px] text-white opacity-80 lg:pr-[30px]">
               Мы поможем собрать вам персональный заказ. ИИ, менеджеры и
               огромная база препаратов - все что нужно для эффективного лечения.
             </div>
-            <button className="button">Сделать заказ</button>
+            <button className="button w-full xl:w-auto">Сделать заказ</button>
           </div>
-          <div className="relative">
+          <div className="relative hidden xl:block">
             <img src={TryImage} alt="" className="relative z-[2]" />
             <div className="absolute inset-x-0 bottom-0 h-[356px] rounded-[48px] bg-[#0788F1]"></div>
+          </div>
+          <div className="relative block w-full xl:hidden">
+            <img
+              src={TryMobileImage}
+              alt=""
+              className="absolute left-1/2 top-0 z-[2] -translate-x-1/2"
+            />
+            <div className="h-[356px] rounded-[48px] bg-[#0788F1]"></div>
           </div>
         </div>
       </div>
@@ -371,7 +421,7 @@ export const MainPage = () => {
         <div className="container">
           <h3>Остались вопросы?</h3>
           <h4>FAQ</h4>
-          <div className="mt-[56px]">
+          <div className="mt-[40px] xl:mt-[56px]">
             <FaqAccordion />
           </div>
         </div>
