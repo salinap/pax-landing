@@ -23,15 +23,15 @@ const NAV = [
   },
   {
     title: 'Отзывы',
-    to: '/',
+    to: RoutesPath.REVIEWS,
   },
   {
     title: 'Вакансии',
-    to: '/',
+    to: RoutesPath.VACANCIES,
   },
   {
     title: 'Контакты',
-    to: '/',
+    to: RoutesPath.CONTACTS,
   },
 ];
 

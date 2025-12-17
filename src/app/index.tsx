@@ -8,6 +8,9 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import { AboutPage } from 'pages/about-page';
+import { ContactsPage } from 'pages/contacts-page';
+import { ReviewPage } from 'pages/review-page';
+import { VacanciesPage } from 'pages/vacancies-page';
 
 import { RoutesPath } from 'shared/routes-path';
 
@@ -37,6 +40,9 @@ const Pages = () => {
       <Route element={<Layout />}>
         <Route path={RoutesPath.MAIN} element={<MainPage />} />
         <Route path={RoutesPath.ABOUT} element={<AboutPage />} />
+        <Route path={RoutesPath.REVIEWS} element={<ReviewPage />} />
+        <Route path={RoutesPath.VACANCIES} element={<VacanciesPage />} />
+        <Route path={RoutesPath.CONTACTS} element={<ContactsPage />} />
       </Route>
       <Route path="*" element={<Navigate replace to={RoutesPath.MAIN} />} />
     </Routes>

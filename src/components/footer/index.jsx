@@ -21,15 +21,15 @@ export default function Footer() {
               Smart-аптека
             </NavLink>
             <NavLink to="/" className="text-white">
-              Врачам
+              Врачам/Компаниям
             </NavLink>
-            <NavLink to="/" className="text-white">
-              Компаниям
+            <NavLink to={RoutesPath.REVIEWS} className="text-white">
+              Отзывы
             </NavLink>
             <NavLink to={RoutesPath.ABOUT} className="text-white">
               О нас
             </NavLink>
-            <NavLink to="/" className="text-white">
+            <NavLink to={RoutesPath.CONTACTS} className="text-white">
               Контакты
             </NavLink>
           </nav>

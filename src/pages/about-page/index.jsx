@@ -67,14 +67,18 @@ export const AboutPage = () => {
         </div>
       </div>
 
-      <div className="section">
-        <div className="container">
-          <h3>Технология здоровья</h3>
-          <h4 className="mb-[40px] lg:mb-[56px]">в действии</h4>
-          <VideoCard
-            preview={AboutVideoPreview}
-            url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-          />
+      <div className="bg-main">
+        <div className="rounded-t-[48px] bg-white">
+          <div className="section">
+            <div className="container">
+              <h3>Технология здоровья</h3>
+              <h4 className="mb-[40px] lg:mb-[56px]">в действии</h4>
+              <VideoCard
+                preview={AboutVideoPreview}
+                url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="section team-section">

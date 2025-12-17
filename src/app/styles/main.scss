@@ -249,3 +249,72 @@ h4 {
     }
   }
 }
+
+.pagination {
+  display: flex;
+  gap: 8px;
+
+  a {
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    color: #696777;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+
+    @media (max-width: 370px) {
+      font-size: 14px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+    }
+
+    &:hover {
+      background-color: #F3F8FD;
+    }
+  }
+
+  .selected a {
+    background-color: #151519;
+    color: #fff;
+    pointer-events: none;
+  }
+  
+  .disabled a{
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+.vacancie {
+  p {
+    margin-top: 32px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #696777;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+  }
+  li {
+    position: relative;
+    padding-left: 15px;
+    font-size: 16px;
+    line-height: 24px;
+    &::before {
+      width: 5px;
+      height: 5px;
+      border-radius: 5px;
+      background-color: #000;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+  }
+}
