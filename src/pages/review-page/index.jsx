@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
-import Star from '../../assets/images/star.svg';
 import ActiveStar from '../../assets/images/active-start.svg';
+import Star from '../../assets/images/star.svg';
 import TeamImage from '../../assets/images/team.png';
 import TryBanner from '../../components/try-banner';
 import { useIsDesktop } from '../../hooks';
