@@ -34,12 +34,13 @@ export default function VideoCard({preview, url}) {
     >
       <video
         ref={videoRef}
+        controls
         src={url}
         poster={preview}
         className="h-auto w-full"
       />
 
-      <button
+      {/* <button
         onClick={togglePlay}
         className="absolute inset-0 flex items-center justify-center bg-black/30 transition hover:bg-black/40"
       >
@@ -50,7 +51,7 @@ export default function VideoCard({preview, url}) {
         ) : (
           <PlayIcon />
         )}
-      </button>
+      </button> */}
     </div>
   );
 }

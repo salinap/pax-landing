@@ -277,7 +277,11 @@ export const MainPage = () => {
         <div className="container">
           <div className="bg-main mx-[-24px] flex flex-col rounded-[48px] px-[24px] py-[48px] lg:mx-0 lg:flex-row lg:items-center lg:px-[48px]">
             <div className="flex">
-              <img src={SubtractLogo} className="size-[80px]" alt="" />
+              <img
+                src={SubtractLogo}
+                className="size-[80px] rounded-full bg-white"
+                alt=""
+              />
               <div className="ml-[32px]">
                 <div className="mb-[4px] text-[24px] font-bold lg:text-[32px]">
                   Получите 15&nbsp;000 баллов{' '}

@@ -13,6 +13,7 @@ import { ReviewPage } from 'pages/review-page';
 import { VacanciesPage } from 'pages/vacancies-page';
 
 import { RoutesPath } from 'shared/routes-path';
+import { ProductPage } from 'pages/product-page';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,6 +44,7 @@ const Pages = () => {
         <Route path={RoutesPath.REVIEWS} element={<ReviewPage />} />
         <Route path={RoutesPath.VACANCIES} element={<VacanciesPage />} />
         <Route path={RoutesPath.CONTACTS} element={<ContactsPage />} />
+        <Route path={RoutesPath.PRODCUT} element={<ProductPage />} />
       </Route>
       <Route path="*" element={<Navigate replace to={RoutesPath.MAIN} />} />
     </Routes>

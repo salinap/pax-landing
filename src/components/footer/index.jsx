@@ -6,7 +6,7 @@ import { RoutesPath } from 'shared/routes-path';
 
 export default function Footer() {
   return (
-    <footer className="mx-auto mb-0 mt-16 max-w-7xl rounded-t-brand-32 bg-[#151518] p-[32px] text-white lg:mb-[96px] lg:rounded-[48px] lg:p-[50px]">
+    <footer className="mx-auto mb-0 mt-16 max-w-[1227px] rounded-t-brand-32 bg-[#151518] p-[32px] text-white lg:mb-[96px] lg:rounded-[48px] lg:p-[50px]">
       <div className="flex flex-col justify-between gap-10 md:flex-row">
         <div className="flex flex-col justify-between">
           <img src={PaxLogo} alt="" className="max-w-[86px]" />
@@ -20,7 +20,7 @@ export default function Footer() {
             <NavLink to={RoutesPath.MAIN} className="text-white">
               Smart-аптека
             </NavLink>
-            <NavLink to="/" className="text-white">
+            <NavLink to={RoutesPath.PRODCUT} className="text-white">
               Врачам/Компаниям
             </NavLink>
             <NavLink to={RoutesPath.REVIEWS} className="text-white">
@@ -33,7 +33,7 @@ export default function Footer() {
               Контакты
             </NavLink>
           </nav>
-          <nva className="flex flex-col gap-[12px] ">
+          <nav className="flex flex-col gap-[12px] ">
             <NavLink to="" className="text-white">
               Сертификаты
             </NavLink>
@@ -49,7 +49,7 @@ export default function Footer() {
             <NavLink to="" className="text-white">
               Бонусная программа
             </NavLink>
-          </nva>
+          </nav>
         </div>
 
         <div className="flex flex-col items-start gap-4 md:items-end">

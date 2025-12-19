@@ -4,4 +4,5 @@ export const enum RoutesPath {
   REVIEWS = '/reviews',
   VACANCIES = '/vacancies',
   CONTACTS = '/contacts',
+  PRODCUT = '/product',
 }

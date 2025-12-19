@@ -15,7 +15,7 @@ const NAV = [
   },
   {
     title: 'Врачам / Компаниям',
-    to: '/',
+    to: RoutesPath.PRODCUT,
   },
   {
     title: 'О нас',
@@ -38,6 +38,10 @@ const NAV = [
 const Header = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    document.title = `Pax | ${NAV.find((item) => item.to.includes(location.pathname))?.title}`;
+  }, [location]);
 
   useEffect(() => {
     setOpen(false);
@@ -76,7 +80,7 @@ const Header = () => {
                 ))}
               </nav>
               <button className="header__button mb-[48px] mt-[46px]">
-                Войти
+                Войти / Регистрация
               </button>
             </div>
           </motion.div>
@@ -106,7 +110,7 @@ const Header = () => {
                 </NavLink>
               ))}
             </nav>
-            <button className="header__button hidden lg:block">Войти</button>
+            <button className="header__button hidden lg:block">Войти / Регистрация</button>
             <div
               className="relative top-[-5px] ml-auto flex size-[40px] cursor-pointer items-center justify-center lg:hidden"
               onClick={() => setOpen(!open)}

@@ -318,3 +318,32 @@ h4 {
     }
   }
 }
+.advantages {
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    gap: 12px
+  }
+  li {
+    position: relative;
+    padding-left: 15px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #696777;
+    &::before {
+      width: 5px;
+      height: 5px;
+      border-radius: 5px;
+      background-color: #696777;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+  }
+}
+
+.swiper-slide.h-auto {
+  height: auto!important;
+}
