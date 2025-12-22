@@ -17,38 +17,58 @@ export default function Footer() {
 
         <div className="flex flex-col gap-[40px] text-base lg:flex-row lg:gap-[180px]">
           <nav className="flex flex-col gap-[12px]">
-            <NavLink to={RoutesPath.MAIN} className="text-white">
-              Smart-аптека
-            </NavLink>
-            <NavLink to={RoutesPath.PRODCUT} className="text-white">
-              Врачам/Компаниям
-            </NavLink>
-            <NavLink to={RoutesPath.REVIEWS} className="text-white">
-              Отзывы
-            </NavLink>
-            <NavLink to={RoutesPath.ABOUT} className="text-white">
-              О нас
-            </NavLink>
-            <NavLink to={RoutesPath.CONTACTS} className="text-white">
-              Контакты
-            </NavLink>
+            <div>
+              <NavLink to={RoutesPath.MAIN} className="border-b border-transparent text-white hover:border-gray-600">
+                Smart-аптека
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to={RoutesPath.PRODCUT} className="border-b border-transparent text-white hover:border-gray-600">
+                Врачам/Компаниям
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to={RoutesPath.REVIEWS} className="border-b border-transparent text-white hover:border-gray-600">
+                Отзывы
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to={RoutesPath.ABOUT} className="border-b border-transparent text-white hover:border-gray-600">
+                О нас
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to={RoutesPath.CONTACTS} className="border-b border-transparent text-white hover:border-gray-600">
+                Контакты
+              </NavLink>
+            </div>
           </nav>
           <nav className="flex flex-col gap-[12px] ">
-            <NavLink to="" className="text-white">
-              Сертификаты
-            </NavLink>
-            <NavLink to="" className="text-white">
-              Договор оферты
-            </NavLink>
-            <NavLink to="" className="text-white">
-              Политика конфиденциальности
-            </NavLink>
-            <NavLink to="" className="text-white">
-              Пользовательское соглашение
-            </NavLink>
-            <NavLink to="" className="text-white">
-              Бонусная программа
-            </NavLink>
+            <div>
+              <NavLink to="" className="border-b border-transparent text-white hover:border-gray-600">
+                Сертификаты
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to="" className="border-b border-transparent text-white hover:border-gray-600">
+                Договор оферты
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to="" className="border-b border-transparent text-white hover:border-gray-600">
+                Политика конфиденциальности
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to="" className="border-b border-transparent text-white hover:border-gray-600">
+                Пользовательское соглашение
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to="" className="border-b border-transparent text-white hover:border-gray-600">
+                Бонусная программа
+              </NavLink>
+            </div>
           </nav>
         </div>
 

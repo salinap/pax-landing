@@ -82,7 +82,7 @@ h4 {
   border-radius: 100px;
 
   &:hover {
-    color: #000;
+    color: rgba(7, 136, 241, 1);
   }
 
   &--active {
@@ -346,4 +346,7 @@ h4 {
 
 .swiper-slide.h-auto {
   height: auto!important;
+}
+.swiper-slide.h-full {
+  height: 100%!important;
 }

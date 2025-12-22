@@ -40,6 +40,7 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = `Pax | ${NAV.find((item) => item.to.includes(location.pathname))?.title}`;
   }, [location]);
 
@@ -95,7 +96,7 @@ const Header = () => {
             <NavLink to={NAV[0].to}>
               <img src={PaxLogo} className="max-h-[34px] lg:max-h-max" alt="" />
             </NavLink>
-            <nav className="mx-auto hidden gap-[14px] lg:flex">
+            <nav className="mx-auto hidden xl:gap-[14px] lg:flex">
               {NAV.map(({ title, to }) => (
                 <NavLink
                   to={to}
@@ -110,7 +111,13 @@ const Header = () => {
                 </NavLink>
               ))}
             </nav>
-            <button className="header__button hidden lg:block">Войти / Регистрация</button>
+            <button className="header__button hidden lg:block">
+              Войти
+              <span className="text-white lg:hidden xl:inline">
+                {' '}
+                / Регистрация
+              </span>
+            </button>
             <div
               className="relative top-[-5px] ml-auto flex size-[40px] cursor-pointer items-center justify-center lg:hidden"
               onClick={() => setOpen(!open)}

@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-export default function VideoCard({preview, url}) {
+export default function VideoCard({ preview, url }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -28,7 +28,7 @@ export default function VideoCard({preview, url}) {
 
   return (
     <div
-      className="relative mx-auto w-full overflow-hidden rounded-2xl shadow-lg"
+      className="relative mx-auto w-full overflow-hidden rounded-brand-32 lg:rounded-[40px]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -37,7 +37,7 @@ export default function VideoCard({preview, url}) {
         controls
         src={url}
         poster={preview}
-        className="h-auto w-full"
+        className="h-auto w-full object-cover"
       />
 
       {/* <button

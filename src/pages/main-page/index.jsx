@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import HiWImage1 from '../../assets/images/hiw1.jpg';
@@ -73,6 +73,24 @@ const REVIREWS = [
 
 export const MainPage = () => {
   const [howItWorksStep, setHowItWorksStep] = useState(0);
+  const [loadedImages, setLoadedImages] = useState({
+    why1: false,
+    why2: false,
+    why3: false,
+    why4: false,
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHowItWorksStep((prev) => (prev + 1) % HOW_IT_WORKS.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleImageLoad = (imageKey) => {
+    setLoadedImages((prev) => ({ ...prev, [imageKey]: true }));
+  };
 
   return (
     <>
@@ -178,7 +196,7 @@ export const MainPage = () => {
                       {HOW_IT_WORKS.map((step, index) => (
                         <SwiperSlide
                           key={index}
-                          className="max-w-[400px] rounded-brand-32 bg-[#F3F8FD] p-[32px]"
+                          className="h-full max-w-[400px] rounded-brand-32 bg-[#F3F8FD] p-[32px]"
                         >
                           <div className="mb-[12px] text-[24px] font-semibold leading-[32px]">
                             {step.title}
@@ -187,7 +205,7 @@ export const MainPage = () => {
                             {step.description}
                           </p>
                           <div
-                            className="h-[346px] rounded-brand-32"
+                            className="h-[346px] rounded-brand-32 bg-cover bg-center"
                             style={{
                               backgroundImage: `url(${step.img})`,
                               backgroundRepeat: 'no-repeat',
@@ -210,7 +228,16 @@ export const MainPage = () => {
         <div className="mx-[-26px] mt-[56px] flex flex-wrap lg:mx-0">
           <div className="bg-primary rounded-[48px] px-[24px] py-[16px] sm:w-1/2 lg:px-[32px]">
             <div className="flex items-center justify-center py-[24px] sm:h-[310px] sm:py-0">
-              <img src={WhyImage1} alt="" />
+              {!loadedImages.why1 && (
+                <div className="size-[200px] animate-pulse rounded-lg bg-white opacity-35"></div>
+              )}
+              <img
+                src={WhyImage1}
+                alt=""
+                loading="lazy"
+                onLoad={() => handleImageLoad('why1')}
+                className={loadedImages.why1 ? 'opacity-100' : 'opacity-0'}
+              />
             </div>
             <div className="mb-[16px] text-center text-[24px] font-medium leading-[32px] lg:text-[32px] lg:leading-[40px]">
               Персональный подбор и&nbsp;дозировка
@@ -223,7 +250,16 @@ export const MainPage = () => {
           </div>
           <div className="bg-main rounded-[48px] px-[24px] py-[16px] sm:w-1/2 lg:px-[32px]">
             <div className="flex items-center justify-center py-[24px] sm:h-[310px] sm:py-0">
-              <img src={WhyImage2} alt="" />
+              {!loadedImages.why2 && (
+                <div className="size-[200px] animate-pulse rounded-lg bg-white opacity-35"></div>
+              )}
+              <img
+                src={WhyImage2}
+                alt=""
+                loading="lazy"
+                onLoad={() => handleImageLoad('why2')}
+                className={loadedImages.why2 ? 'opacity-100' : 'opacity-0'}
+              />
             </div>
             <div className="mb-[16px] text-center text-[24px] font-medium leading-[32px] lg:text-[32px] lg:leading-[40px]">
               Удобная упаковка <br />
@@ -237,7 +273,16 @@ export const MainPage = () => {
           </div>
           <div className="bg-secondary rounded-[48px] px-[24px] py-[16px] sm:w-1/2 lg:px-[32px]">
             <div className="flex items-center justify-center py-[24px] sm:h-[310px] sm:py-0">
-              <img src={WhyImage3} alt="" />
+              {!loadedImages.why3 && (
+                <div className="size-[200px] animate-pulse rounded-lg bg-white opacity-35"></div>
+              )}
+              <img
+                src={WhyImage3}
+                alt=""
+                loading="lazy"
+                onLoad={() => handleImageLoad('why3')}
+                className={loadedImages.why3 ? 'opacity-100' : 'opacity-0'}
+              />
             </div>
             <div className="mb-[16px] text-center text-[24px] font-medium leading-[32px] lg:text-[32px] lg:leading-[40px]">
               Контроль состава <br />и качества препаратов
@@ -250,7 +295,16 @@ export const MainPage = () => {
           </div>
           <div className="bg-primary rounded-[48px] px-[24px] py-[16px] sm:w-1/2 lg:px-[32px]">
             <div className="flex items-center justify-center py-[24px] sm:h-[310px] sm:py-0">
-              <img src={WhyImage4} alt="" />
+              {!loadedImages.why4 && (
+                <div className="size-[200px] animate-pulse rounded-lg bg-white opacity-35"></div>
+              )}
+              <img
+                src={WhyImage4}
+                alt=""
+                loading="lazy"
+                onLoad={() => handleImageLoad('why4')}
+                className={loadedImages.why4 ? 'opacity-100' : 'opacity-0'}
+              />
             </div>
             <div className="mb-[16px] text-center text-[24px] font-medium leading-[32px] lg:text-[32px] lg:leading-[40px]">
               Поддержка в соблюдении <br />

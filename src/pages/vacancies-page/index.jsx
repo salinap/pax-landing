@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-import TeamImage from '../../assets/images/team.png';
+import TeamImage1 from '../../assets/images/team/1.png';
+import TeamImage2 from '../../assets/images/team/2.png';
+import TeamImage3 from '../../assets/images/team/3.png';
+import TeamImage4 from '../../assets/images/team/4.png';
+import TeamImage5 from '../../assets/images/team/5.jpg';
 import TryBanner from '../../components/try-banner';
 import VacanciesAccordion from '../../components/vacancies-accordion';
 import { useIsDesktop } from '../../hooks';
@@ -12,7 +16,7 @@ export const VacanciesPage = () => {
     <>
       <div className="bg-main">
         <div className="container">
-          <div className="flex flex-col pb-[84px] pt-[38px] lg:flex-row lg:items-center lg:bg-[length:auto] lg:pb-[140px] lg:pt-[96px]">
+          <div className="flex flex-col pb-[84px] pt-[38px] lg:flex-row lg:items-start lg:bg-[length:auto] lg:pb-[140px] lg:pt-[96px]">
             <div>
               <h1>Вакансии </h1>
             </div>
@@ -26,13 +30,26 @@ export const VacanciesPage = () => {
                 </div>
               </div>
               <div className="flex [&>*:not(:first-child)]:ml-[-20px]">
-                {Array.from({ length: 5 }, (_, i) => i + 1).map((i) => (
-                  <div
-                    key={i}
-                    className="size-[66px] rounded-full border-[5px] border-solid border-[#D8EDFF] bg-cover bg-center sm:size-[88px]"
-                    style={{ backgroundImage: `url(${TeamImage})` }}
-                  />
-                ))}
+                <div
+                  className="size-[66px] rounded-full border-[5px] border-solid border-[#D8EDFF] bg-cover bg-center sm:size-[88px]"
+                  style={{ backgroundImage: `url(${TeamImage1})` }}
+                />
+                <div
+                  className="size-[66px] rounded-full border-[5px] border-solid border-[#D8EDFF] bg-cover bg-center sm:size-[88px]"
+                  style={{ backgroundImage: `url(${TeamImage2})` }}
+                />
+                <div
+                  className="size-[66px] rounded-full border-[5px] border-solid border-[#D8EDFF] bg-cover bg-center sm:size-[88px]"
+                  style={{ backgroundImage: `url(${TeamImage3})` }}
+                />
+                <div
+                  className="size-[66px] rounded-full border-[5px] border-solid border-[#D8EDFF] bg-cover bg-center sm:size-[88px]"
+                  style={{ backgroundImage: `url(${TeamImage4})` }}
+                />
+                <div
+                  className="size-[66px] rounded-full border-[5px] border-solid border-[#D8EDFF] bg-[length:90px] bg-[center_top] sm:size-[88px] lg:bg-[length:130px]"
+                  style={{ backgroundImage: `url(${TeamImage5})` }}
+                />
               </div>
             </div>
           </div>

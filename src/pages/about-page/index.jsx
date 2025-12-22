@@ -9,7 +9,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import AboutImage from '../../assets/images/about-image.svg';
 import AboutVideoPreview from '../../assets/images/about-video-prview.jpg';
-import TeamImage from '../../assets/images/team.png';
+import TeamImage3 from '../../assets/images/team/5.jpg';
+import TeamImage2 from '../../assets/images/team/6.jpg';
+import TeamImage4 from '../../assets/images/team/7.jpg';
+import TeamImage1 from '../../assets/images/team/8.jpg';
+import TeamImage5 from '../../assets/images/team/9.jpg';
 import WhenImage from '../../assets/images/when-image.jpg';
 import WhyImage from '../../assets/images/why-about.jpg';
 import VideoCard from '../../components/video-card';
@@ -37,6 +41,34 @@ const WHEN = [
   {
     title: '45%',
     info: 'пациентов в России прекращают лечение раньше времени - по данным IQVIA и DSM Group',
+  },
+];
+
+const TEAM = [
+  {
+    name: 'Прохор Валетов',
+    role: 'Главный таблетковед',
+    img: TeamImage1,
+  },
+  {
+    name: 'Савелий Храмцов',
+    role: 'Главный таблетковед',
+    img: TeamImage2,
+  },
+  {
+    name: 'Жестков Александр',
+    role: 'Дипломированный провизор',
+    img: TeamImage3,
+  },
+  {
+    name: 'Инга Брюсова',
+    role: 'Главный таблетковед',
+    img: TeamImage4,
+  },
+  {
+    name: 'Пётр Преображенский',
+    role: 'Главный таблетковед',
+    img: TeamImage5,
   },
 ];
 
@@ -108,20 +140,20 @@ export const AboutPage = () => {
             },
           }}
         >
-          {Array.from({ length: 6 }, (_, i) => i + 1).map((i) => (
+          {[...TEAM, ...TEAM].map((i, inx) => (
             <SwiperSlide
               className="min-w-[280px] max-w-[calc(100%-48px)] text-center sm:min-w-[320px] sm:max-w-[25%] xl:max-w-[20%]"
-              key={i}
+              key={inx}
             >
               <div
                 className="h-[320px] rounded-brand-32 bg-cover bg-center"
-                style={{ backgroundImage: `url(${TeamImage})` }}
+                style={{ backgroundImage: `url(${i.img})` }}
               />
               <p className="mb-[4px] mt-[20px] text-[24px] font-semibold leading-[32px]">
-                Прохор Валетов
+                {i.name}
               </p>
               <p className="text-[15px] leading-[24px] text-[#696777]">
-                Главный таблетковед
+                {i.role}
               </p>
             </SwiperSlide>
           ))}
