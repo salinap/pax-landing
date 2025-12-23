@@ -41,7 +41,6 @@ const Header = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Pax | ${NAV.find((item) => item.to.includes(location.pathname))?.title}`;
   }, [location]);
 
   useEffect(() => {

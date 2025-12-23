@@ -17,6 +17,8 @@
 <img title="prettier" alt="prettier" height=48 src="https://prettier.io/icon.png"/>
 </div>
 
+SITE_URL=https://your-domain.com npm run build
+
 ## Перед началом работы
 Убедись, что используешь `nodejs` выше ^18 версии.\
 Если используешь `nvm`, запусти `nvm use` в корневой директории.
