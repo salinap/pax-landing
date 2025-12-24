@@ -2,15 +2,6 @@ import { useRef, useState } from 'react';
 
 export default function VideoCard({ preview, url }) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
 
   const videoRef = useRef(null);
 
@@ -27,31 +18,23 @@ export default function VideoCard({ preview, url }) {
   };
 
   return (
-    <div
-      className="relative mx-auto w-full overflow-hidden rounded-brand-32 lg:rounded-[40px]"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="relative mx-auto w-full overflow-hidden rounded-brand-32 lg:rounded-[40px]">
       <video
         ref={videoRef}
-        controls
+        controls={isPlaying}
         src={url}
         poster={preview}
         className="h-auto w-full object-cover"
       />
 
-      {/* <button
-        onClick={togglePlay}
-        className="absolute inset-0 flex items-center justify-center bg-black/30 transition hover:bg-black/40"
-      >
-        {isPlaying ? (
-          <div style={{ opacity: isHovered ? 1 : 0 }}>
-            <PauseIcon />
-          </div>
-        ) : (
+      {!isPlaying && (
+        <button
+          onClick={togglePlay}
+          className="absolute inset-0 flex items-center justify-center bg-black/30 transition hover:bg-black/40"
+        >
           <PlayIcon />
-        )}
-      </button> */}
+        </button>
+      )}
     </div>
   );
 }

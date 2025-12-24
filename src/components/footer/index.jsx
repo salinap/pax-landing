@@ -6,7 +6,7 @@ import { RoutesPath } from 'shared/routes-path';
 
 export default function Footer() {
   return (
-    <footer className="mx-auto mb-0 mt-16 max-w-[1227px] rounded-t-brand-32 bg-[#151518] p-[32px] text-white lg:mb-[96px] lg:rounded-[48px] lg:p-[50px]">
+    <footer className="mx-auto mb-0 mt-16 max-w-[1227px] rounded-t-brand-32 bg-[#151518] p-[32px] text-white lg:mb-[32px] lg:rounded-[48px] lg:p-[50px]">
       <div className="flex flex-col justify-between gap-10 md:flex-row">
         <div className="flex flex-col justify-between">
           <img src={PaxLogo} alt="" className="max-w-[86px]" />
